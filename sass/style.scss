@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+$darkCyan: hsl(185, 75%, 39%);
+$veryDarkDesature: hsl(229, 23%, 23%);
+$darkGrayish-Blue: hsl(227, 10%, 46%);
+$darkGray: hsl(0, 0%, 59%);
+
+$font-size: 62.5%; /*1rem = 10px*/
+$main-font: 'Kumbh Sans', sans-serif;
+$light: 400;
+$bold: 700;
+
+html {
+    box-sizing: border-box;
+    font-family: $main-font;
+    font-size: $font-size;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+    background-color: $darkCyan;
+    background-image: url('../img/bg-pattern-top.svg'), url('../img/bg-pattern-bottom.svg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: right 50vw bottom 50vh, left 50vw top 50vh ;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .bg-decoration {
+        position: absolute;
+    }
+
+    .top {
+        top: 0;
+        
+    }
+}
+
+.card {
+    position: relative;
+    background-color: white;
+    width: 326px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 5px 5px rgba(0, 0, 0, .075);
+    text-align: center;
+
+    &-header {
+        display: block;
+        width: 100%;
+    }
+
+    &-body {
+        &-photo {
+            margin-top: -55px;
+            width: 100px;
+            border-radius: 50%;
+            border: 5px solid white;
+        }
+        &-name {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+            font-weight: $bold;
+            color: $veryDarkDesature;
+
+            span {
+                font-weight: $light;
+                color: $darkGrayish-Blue;
+            }
+
+            a {
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: $veryDarkDesature;
+            }
+        }
+        &-location {
+            font-size: 1.2rem;
+            font-weight: $light;
+            color: $darkGrayish-Blue;
+            margin-top: 0;
+            margin-bottom: 4rem;
+
+            span {
+                font-size: 80%;
+                vertical-align: super;
+            }
+        }
+    }
+
+    &-footer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        place-content: center, space-evenly;
+        align-items: center;
+        padding: 2rem 1.5rem;
+        border-top: 1px solid #f1f1f1;
+        
+        &-social {
+            h3 {
+                font-size: 1.8rem;
+                font-weight: $bold;
+                margin: 0;
+            }
+
+            p {
+                font-size: 1.2rem;
+                font-weight: $light;
+                margin: 0;
+                margin-top: 1rem;
+                color: $darkGrayish-Blue;
+            }
+        }
+    }
+}
